@@ -1,0 +1,18 @@
+<div>
+	<h2>Bid Now!</h2>
+	<a href="/#/" class="logout_button">Logout</a>
+	<div ng-repeat="i in itemsCtrl.items" class="bidsdiv">
+		<img src={{i.url}} alt="item image goes here">
+		<h4>{{i.name}}</h4>
+		<input type="text" ng-model="bidsCtrl.newBid.amount" placeholder="Amount">
+		<button ng-click="bidsCtrl.create()">Bid</button><br><br><br>
+		Current Bids:
+		<table>
+			<tr ng-repeat="b in bidsCtrl.bids">
+				<td>{{b._user.name}} - {{b.amount}}</td>
+			</tr>
+		</table>
+	</div>
+
+	<a href="/#/endpage" class="end_button">End Bidding</a>
+</div>
